@@ -1,0 +1,5 @@
+[{"fname":"menna", "lname":"ashraf", "stuID":"222333", "phone":"011111111", "address":"Alexandria, Egypt"},
+ {"fname":"aya", "lname":"ahmed", "stuID":"222334", "phone":"016653534", "address":"Cairo, Egypt"},
+ {"fname":"sara", "lname":"mohamed", "stuID":"222335", "phone":"027672546", "address":"Cairo, Egypt"},
+ {"fname":"rana", "lname":"ahmed", "stuID":"222336", "phone":"018778757", "address":"Giza, Egypt"},
+ {"fname":"mennatallah", "lname":"mostafa", "stuID":"222339", "phone":"012345678", "address":"luxor, Egypt"}]
