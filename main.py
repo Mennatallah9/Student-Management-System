@@ -15,7 +15,7 @@ class ConnectorDB:
             if stuID.get()=="" or fname.get()=="" or lname.get()=="":
                 tkinter.messagebox.showerror("Students Management System", "Invalid input! please enter correct details")
             else:
-                sqlCon = pymysql.connect(host="localhost", user="root", password="5gg9s4f*", database="students")
+                sqlCon = pymysql.connect(host="localhost", user="root", password="5gg9f4s*", database="students")
                 cur = sqlCon.cursor()
                 cur.execute("insert into students values(%s, %s, %s, %s, %s)",(fname.get(), lname.get(), stuID.get(), phone.get(), address.get()))
                 sqlCon.commit()
