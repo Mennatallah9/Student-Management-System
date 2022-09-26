@@ -7,20 +7,20 @@ class ConnectorDB:
     def __init__(self, root):
         self.root = root
         self.root.geometry("850x590+300+100")
-        self.root.title("Students Management System")
+        self.root.title("Student Management System")
         self.root.resizable(width=False, height=False)
         self.root.iconbitmap("C:\python\Student Management system\icon.ico")
 
         def addstu():
             if stuID.get()=="" or fname.get()=="" or lname.get()=="":
-                tkinter.messagebox.showerror("Students Management System", "Invalid input! please enter correct details")
+                tkinter.messagebox.showerror("Student Management System", "Invalid input! please enter correct details")
             else:
                 sqlCon = pymysql.connect(host="localhost", user="root", password="5gg9f4s*", database="students")
                 cur = sqlCon.cursor()
                 cur.execute("insert into students values(%s, %s, %s, %s, %s)",(fname.get(), lname.get(), stuID.get(), phone.get(), address.get()))
                 sqlCon.commit()
                 sqlCon.close()
-                tkinter.messagebox.showinfo("Students Management System", "Record Entered Successfully!")
+                tkinter.messagebox.showinfo("Student Management System", "Record Entered Successfully!")
 
         def display():
             sqlCon = pymysql.connect(host="localhost", user="root", password="5gg9f4s*", database="students")
@@ -51,7 +51,7 @@ class ConnectorDB:
             sqlCon.commit()
             display()
             sqlCon.close()
-            tkinter.messagebox.showinfo("Students Management System", "Record updated Successfully!")
+            tkinter.messagebox.showinfo("Student Management System", "Record updated Successfully!")
 
 
         def delete():
@@ -61,7 +61,7 @@ class ConnectorDB:
             sqlCon.commit()
             display()
             sqlCon.close()
-            tkinter.messagebox.showinfo("Students Management System", "Record deleted Successfully!")
+            tkinter.messagebox.showinfo("Student Management System", "Record deleted Successfully!")
             reset()
 
 
@@ -78,7 +78,7 @@ class ConnectorDB:
                 address.set(row[4])
                 sqlCon.commit()
             except:
-                tkinter.messagebox.showinfo("Students Management System", "Not found!")
+                tkinter.messagebox.showinfo("Student Management System", "Not found!")
                 reset()
             sqlCon.close()
 
@@ -90,28 +90,28 @@ class ConnectorDB:
             self.address_entry.delete(0, END)
 
         def exitprogram():
-            exitprogram = tkinter.messagebox.askyesno("Students Management System", "Do you really want to exit?")
+            exitprogram = tkinter.messagebox.askyesno("Student Management System", "Do you really want to exit?")
             if exitprogram > 0:
                 root.destroy()
                 return
 
-        mainFrame = Frame(self.root, bg="midnight blue", width=770, height=700, relief=RIDGE, bd=10)
+        mainFrame = Frame(self.root, bg="white", width=770, height=700, relief=RIDGE, bd=10)
         mainFrame.grid()
 
-        titleFrame = Frame(mainFrame, bg="midnight blue", width=770, height=100, relief=RIDGE, bd=7)
+        titleFrame = Frame(mainFrame, bg="white", width=770, height=100, relief=RIDGE, bd=7)
         titleFrame.grid(row=0, column=0)
 
-        topFrame = Frame(mainFrame, bg="midnight blue", width=770, height=500, relief=RIDGE, bd=5)
+        topFrame = Frame(mainFrame, bg="white", width=770, height=500, relief=RIDGE, bd=5)
         topFrame.grid(row=1, column=0)
 
-        leftFrame = Frame(topFrame, bg="midnight blue", width=770, height=400, relief=RIDGE, bd=5, padx=2)
+        leftFrame = Frame(topFrame, bg="white", width=770, height=400, relief=RIDGE, bd=5, padx=2)
         leftFrame.pack(side=LEFT)
-        leftFrame1 = Frame(leftFrame, bg="midnight blue", width=600, height=180, relief=RIDGE, bd=5, padx=2, pady=4)
+        leftFrame1 = Frame(leftFrame, bg="white", width=600, height=180, relief=RIDGE, bd=5, padx=2, pady=4)
         leftFrame1.pack(side=TOP, padx=0, pady=0)
 
-        rightFrame = Frame(topFrame, bg="midnight blue", width=100, height=400, relief=RIDGE, bd=5, padx=2)
+        rightFrame = Frame(topFrame, bg="white", width=100, height=400, relief=RIDGE, bd=5, padx=2)
         rightFrame.pack(side=RIGHT)
-        rightFrame1 = Frame(rightFrame, bg="midnight blue", width=90, height=300, relief=RIDGE, bd=5, padx=2, pady=2)
+        rightFrame1 = Frame(rightFrame, bg="white", width=90, height=300, relief=RIDGE, bd=5, padx=2, pady=2)
         rightFrame1.pack(side=TOP)
 
         fname = StringVar()
@@ -121,18 +121,18 @@ class ConnectorDB:
         address = StringVar()
 
 
-        self.title_label = Label(titleFrame, text="Students Management System", font=("Arial Bold", 25), bg="midnight blue", fg="white", bd=7)
+        self.title_label = Label(titleFrame, text="Student Management System", font=("Arial Bold", 25), bg="white", fg="midnight blue", bd=7)
         self.title_label.grid(row=0, column=0, padx=165)
 
-        self.fname_label = Label(leftFrame1, text="First name:", font=("Arial", 15), bg="midnight blue", fg="white", bd=7)
+        self.fname_label = Label(leftFrame1, text="First name:", font=("Arial", 15), bg="white", fg="midnight blue", bd=7)
         self.fname_label.grid(row=1, column=0, sticky=W, padx=5)
-        self.lname_label = Label(leftFrame1, text="Last name:", font=("Arial", 15), bg="midnight blue", fg="white", bd=7)
+        self.lname_label = Label(leftFrame1, text="Last name:", font=("Arial", 15), bg="white", fg="midnight blue", bd=7)
         self.lname_label.grid(row=2, column=0, sticky=W, padx=5)
-        self.id_label = Label(leftFrame1, text="Student ID:", font=("Arial", 15), bg="midnight blue", fg="white", bd=7)
+        self.id_label = Label(leftFrame1, text="Student ID:", font=("Arial", 15), bg="white", fg="midnight blue", bd=7)
         self.id_label.grid(row=3, column=0, sticky=W, padx=5)
-        self.phone_label = Label(leftFrame1, text="Phone number:", font=("Arial", 15), bg="midnight blue", fg="white", bd=7)
+        self.phone_label = Label(leftFrame1, text="Phone number:", font=("Arial", 15), bg="white", fg="midnight blue", bd=7)
         self.phone_label.grid(row=4, column=0, sticky=W, padx=5)
-        self.address_label = Label(leftFrame1, text="Address:", font=("Arial", 15), bg="midnight blue", fg="white", bd=7)
+        self.address_label = Label(leftFrame1, text="Address:", font=("Arial", 15), bg="white", fg="midnight blue", bd=7)
         self.address_label.grid(row=5, column=0, sticky=W, padx=5)
 
         self.fname_entry = Entry(leftFrame1, width=44, bd=5, fg="midnight blue", font=("times new roman", 15), justify="left", textvariable=fname)
