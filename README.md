@@ -1,14 +1,16 @@
 
 # Student Management System
 
-a GUI desktop application to collect and edit a database of students
+a GUI desktop application to collect students data and edit a database of students
 
 
 
 
-## Screenshot
+## Screenshots
 
 ![demo](https://github.com/Mennatallah9/Student-Management-System/blob/main/screenshot1.PNG?raw=true)
+
+![demo](https://github.com/Mennatallah9/Student-Management-System/blob/main/screenshot2.PNG?raw=true)
 
 ## Installation
 
