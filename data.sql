@@ -3,7 +3,7 @@ CREATE TABLE `students` (
   `lname` varchar(45) NULL,
   `stuID` varchar(12) NOT NULL,
   `phone` varchar(45) NULL,
-  `address` varchar(45) NOT NULL,
+  `address` varchar(45) NULL,
    PRIMARY KEY (`stuID`)
 );
 
