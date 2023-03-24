@@ -1,0 +1,2 @@
+tkinter==8.6
+pymysql==1.0.2
