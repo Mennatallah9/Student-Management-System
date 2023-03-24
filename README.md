@@ -1,29 +1,36 @@
 
 # Student Management System
 
-a GUI desktop application to collect students data and edit a database of students
-
-
-
-
-## Screenshots
-
-![demo](https://github.com/Mennatallah9/Student-Management-System/blob/main/screenshot1.PNG?raw=true)
-
-![demo](https://github.com/Mennatallah9/Student-Management-System/blob/main/screenshot2.PNG?raw=true)
+This is a Python-based desktop application that serves as a student management system. It provides an interface for users to add, delete, update, and search for students using their ID.
 
 ## Installation
-
-To run this program you need to install these modules:
-
-1. tkinter
-
+1. Clone the repository to your local machine:
+```bash
+$ git clone https://github.com/Mennatallah9/Student-Management-System.git
 ```
-pip install tk
+2. Navigate to the project directory:
+```bash
+$ cd Student-Management-System
+```
+3. Install the required dependencies:
+```bash
+$ pip install -r requirements.txt
 ```
 
-2. PyMySQL
+## Usage
+1. Run the Python script:
+```bash
+$ python main.py
 ```
-pip install PyMySQL
-```
-    
+2. Use the user interface to manage student data.
+
+## Features
+* Add new students to the system
+* Edit existing student data
+* Delete student data from the system
+* Search for students by ID
+
+## Technologies
+* Python
+* tkinter
+* pymysql
