@@ -15,7 +15,7 @@ class ConnectorDB:
             if stuID.get()=="" or fname.get()=="" or lname.get()=="":
                 tkinter.messagebox.showerror("Student Management System", "Invalid input! please enter correct details")
             else:
-                sqlCon = pymysql.connect(host="localhost", user="root", password="5gg9f4s*", database="students")
+                sqlCon = pymysql.connect(host="localhost", user="root", password="password", database="students")
                 cur = sqlCon.cursor()
                 cur.execute("insert into students values(%s, %s, %s, %s, %s)",(fname.get(), lname.get(), stuID.get(), phone.get(), address.get()))
                 sqlCon.commit()
@@ -23,7 +23,7 @@ class ConnectorDB:
                 tkinter.messagebox.showinfo("Student Management System", "Record Entered Successfully!")
 
         def display():
-            sqlCon = pymysql.connect(host="localhost", user="root", password="5gg9f4s*", database="students")
+            sqlCon = pymysql.connect(host="localhost", user="root", password="password", database="students")
             cur = sqlCon.cursor()
             cur.execute("select * from students")
             result = cur.fetchall()
@@ -45,7 +45,7 @@ class ConnectorDB:
             address.set(row[4])
 
         def update():
-            sqlCon = pymysql.connect(host="localhost", user="root", password="5gg9f4s*", database="students")
+            sqlCon = pymysql.connect(host="localhost", user="root", password="password", database="students")
             cur = sqlCon.cursor()
             cur.execute("update students set fname=%s, lname=%s, phone=%s, address=%s where stuID=%s", (fname.get(), lname.get(), phone.get(), address.get(), stuID.get()))
             sqlCon.commit()
@@ -55,7 +55,7 @@ class ConnectorDB:
 
 
         def delete():
-            sqlCon = pymysql.connect(host="localhost", user="root", password="5gg9f4s*", database="students")
+            sqlCon = pymysql.connect(host="localhost", user="root", password="password", database="students")
             cur = sqlCon.cursor()
             cur.execute("delete from students where stuID=%s", stuID.get())
             sqlCon.commit()
@@ -67,7 +67,7 @@ class ConnectorDB:
 
         def search():
             try:
-                sqlCon = pymysql.connect(host="localhost", user="root", password="5gg9f4s*", database="students")
+                sqlCon = pymysql.connect(host="localhost", user="root", password="password", database="students")
                 cur = sqlCon.cursor()
                 cur.execute("select * from students where stuID=%s", stuID.get())
                 row = cur.fetchone()
